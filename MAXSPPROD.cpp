@@ -6,12 +6,14 @@ int Solution::maxSpecialProduct(vector<int> &A) {
     if(n==0) return 0;
     
     vector<int> leftSp(n,-1),rightSp(n,-1);
-    stack<int> s1,s2;
+    stack<int> s1,s2;    // s1 is for leftSpecialValue & s2 is for rightSpecialValue
     int i,tmp;
     long long int max_p=0,cur_p;
     
     s1.push(0);
     s2.push(0);
+    
+    // Finding LeftSpecialValue and RightSpecial value for each ith integer 
     for(i=1;i<n;i++){
         while(s1.size()>0 && A[ s1.top() ]<=A[i]) s1.pop();
         if(s1.size()>0){ 
@@ -30,6 +32,7 @@ int Solution::maxSpecialProduct(vector<int> &A) {
         s2.push(i);
     }
     
+    // finding max product of leftSpValue and rightSpecialValue
     for(i=0;i<n;i++){
         if(leftSp[i]!=-1 && rightSp[i]!=-1){
             cur_p=(long long int)leftSp[i]*(long long int)rightSp[i];
@@ -37,7 +40,8 @@ int Solution::maxSpecialProduct(vector<int> &A) {
         }
     }
     
-    max_p=max_p%mod;
+    // taking mod of 10^9+7
+    max_p=max_p%mod;     
     
     return max_p;
 }
