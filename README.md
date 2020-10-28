@@ -1,2 +1,2 @@
 # InterviewBit
-InterviewBit Programming Questions
+InterviewBit Programming Solutions
