@@ -38,7 +38,7 @@ int main() {
 
     vector<int> v = { 5, 4, 3, 3, 2, 2, 1, 1, 1 };
     int ans = f(v);
-    cout << ans << endl;
+    cout << ans << endl;  // Answer is 3
 
     return 0;
 }
